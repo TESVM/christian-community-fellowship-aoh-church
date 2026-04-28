@@ -92,7 +92,11 @@ select {
 .cards-grid,
 .promise-grid,
 .connect-layout,
-.visit-layout {
+.visit-layout,
+.mission-shell,
+.leadership-layout,
+.next-steps-grid,
+.faq-grid {
   display: grid;
   gap: 1.5rem;
 }
@@ -144,6 +148,36 @@ select {
   gap: 1.25rem;
   font-size: 0.96rem;
   font-weight: 700;
+}
+
+.menu-toggle {
+  display: none;
+  min-height: 2.8rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 250, 245, 0.78);
+  font-weight: 800;
+  color: var(--text);
+}
+
+.mobile-menu {
+  padding-bottom: 1rem;
+}
+
+.mobile-nav {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 251, 246, 0.94);
+}
+
+.mobile-nav a {
+  padding: 0.8rem 0.25rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .site-nav a,
@@ -276,7 +310,13 @@ select {
 .hero-card,
 .detail-card,
 .visit-card,
-.promise-banner {
+.promise-banner,
+.mission-panel,
+.mission-points article,
+.leadership-card,
+.quote-card,
+.step-card,
+.faq-item {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(196, 151, 61, 0.2);
@@ -369,6 +409,50 @@ select {
   align-items: start;
 }
 
+.mission-shell,
+.leadership-layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.mission-panel,
+.leadership-card,
+.quote-card {
+  padding: 2rem;
+}
+
+.mission-panel p,
+.leadership-card p,
+.quote-text {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.mission-points {
+  display: grid;
+  gap: 1rem;
+}
+
+.mission-points article {
+  padding: 1.45rem;
+}
+
+.mission-points h3,
+.step-card h3 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: -0.03em;
+}
+
+.mission-points p,
+.step-card p,
+.faq-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 .section h2,
 .connect-layout h2 {
   font-size: clamp(2.4rem, 4vw, 3.5rem);
@@ -420,6 +504,78 @@ select {
 .visit-panel,
 .connect-layout > div:first-child {
   max-width: 34rem;
+}
+
+.quote-card {
+  background:
+    linear-gradient(180deg, rgba(255, 252, 247, 0.96), rgba(248, 236, 222, 0.92));
+}
+
+.quote-mark {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 0.8;
+  color: rgba(111, 29, 27, 0.32);
+}
+
+.quote-text {
+  margin: 0.5rem 0 0;
+  font-size: 1.15rem;
+}
+
+.quote-attribution {
+  margin: 1.5rem 0 0;
+  color: var(--wine);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.next-steps-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.step-card {
+  padding: 1.6rem;
+}
+
+.step-number {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #9a6b14;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+}
+
+.faq-shell {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.faq-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.faq-item {
+  padding: 1.25rem 1.35rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 800;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item[open] summary {
+  margin-bottom: 0.85rem;
+  color: var(--wine);
 }
 
 .visit-card {
@@ -530,7 +686,11 @@ select {
   .connect-layout,
   .cards-grid,
   .promise-grid,
-  .info-grid {
+  .info-grid,
+  .mission-shell,
+  .leadership-layout,
+  .next-steps-grid,
+  .faq-grid {
     grid-template-columns: 1fr;
   }
 
@@ -542,8 +702,14 @@ select {
     display: none;
   }
 
+  .menu-toggle {
+    display: inline-flex;
+    justify-self: end;
+    align-items: center;
+  }
+
   .nav-shell {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto;
   }
 
   .footer-shell {
@@ -564,7 +730,13 @@ select {
   .hero-card,
   .promise-banner,
   .detail-card,
-  .visit-card {
+  .visit-card,
+  .mission-panel,
+  .mission-points article,
+  .leadership-card,
+  .quote-card,
+  .step-card,
+  .faq-item {
     border-radius: 24px;
   }
 
