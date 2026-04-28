@@ -126,6 +126,16 @@ select {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+.brand-logo {
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 18px;
+  object-fit: contain;
+  background: #120b09;
+  padding: 0.15rem;
+  box-shadow: var(--shadow);
+}
+
 .eyebrow {
   margin: 0 0 0.65rem;
   color: #9a6b14;
@@ -509,6 +519,16 @@ select {
 .quote-card {
   background:
     linear-gradient(180deg, rgba(255, 252, 247, 0.96), rgba(248, 236, 222, 0.92));
+}
+
+.pastor-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 22px;
+  border: 1px solid rgba(196, 151, 61, 0.2);
+  background: #f7efe2;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .quote-mark {

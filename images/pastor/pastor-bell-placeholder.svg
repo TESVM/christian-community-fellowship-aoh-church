@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Pastor portrait placeholder</title>
+  <desc id="desc">Illustrated placeholder portrait for Elder Dr. Leonard Bell II.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f1ddba" />
+      <stop offset="100%" stop-color="#d4b278" />
+    </linearGradient>
+    <linearGradient id="robe" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3f2a24" />
+      <stop offset="100%" stop-color="#160f0d" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1100" rx="48" fill="#f8efe3" />
+  <rect x="50" y="50" width="800" height="1000" rx="40" fill="url(#bg)" />
+  <circle cx="450" cy="330" r="118" fill="#6b4739" />
+  <path d="M320 500c44-56 94-84 130-84s86 28 130 84v68H320z" fill="#8c624e" />
+  <path d="M248 960c6-208 82-320 202-320s196 112 202 320z" fill="url(#robe)" />
+  <path d="M392 650h116l26 92H366z" fill="#f4efe7" />
+  <path d="M450 228c47 0 85 39 85 87v55c0 47-38 85-85 85s-85-38-85-85v-55c0-48 38-87 85-87z" fill="#a57660" />
+  <path d="M368 314c9-62 60-106 122-106 51 0 92 32 112 79-49-14-100-28-150-28-28 0-57 22-84 55z" fill="#35211c" />
+  <path d="M412 352c12 0 22 10 22 22s-10 22-22 22-22-10-22-22 10-22 22-22zm76 0c12 0 22 10 22 22s-10 22-22 22-22-10-22-22 10-22 22-22z" fill="#241714" />
+  <path d="M414 432c26 20 46 28 72 28 26 0 46-8 72-28" fill="none" stroke="#7b221d" stroke-width="12" stroke-linecap="round" />
+  <text x="450" y="118" text-anchor="middle" font-size="44" font-family="Arial, sans-serif" font-weight="700" fill="#5b2a20">
+    ELDER DR. LEONARD BELL II
+  </text>
+  <text x="450" y="1010" text-anchor="middle" font-size="34" font-family="Arial, sans-serif" letter-spacing="6" fill="#fff7ee">
+    PASTORAL LEADERSHIP
+  </text>
+</svg>

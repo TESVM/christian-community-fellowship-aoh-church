@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Christian Community Fellowship logo</title>
+  <desc id="desc">Circular church logo with cross, crown, and Christian Community Fellowship initials.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7b221d" />
+      <stop offset="100%" stop-color="#241714" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="640" rx="64" fill="#120b09" />
+  <circle cx="320" cy="320" r="250" fill="url(#bg)" stroke="#d5ab52" stroke-width="18" />
+  <circle cx="320" cy="320" r="214" fill="none" stroke="#f5deb2" stroke-width="8" stroke-dasharray="6 12" />
+  <path d="M320 160l22 56h54l-43 33 16 55-49-31-49 31 16-55-43-33h54z" fill="#d5ab52" />
+  <path d="M320 220v150M270 278h100" stroke="#fef4df" stroke-width="18" stroke-linecap="round" />
+  <path d="M256 412c26-25 53-38 64-38s38 13 64 38" fill="none" stroke="#fef4df" stroke-width="16" stroke-linecap="round" />
+  <text x="320" y="480" text-anchor="middle" font-size="82" font-family="Georgia, serif" font-weight="700" fill="#fef4df">CCF</text>
+  <text x="320" y="112" text-anchor="middle" font-size="28" font-family="Arial, sans-serif" letter-spacing="8" fill="#f7e5c2">
+    CHRISTIAN COMMUNITY FELLOWSHIP
+  </text>
+</svg>
