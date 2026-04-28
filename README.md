@@ -2,6 +2,10 @@
 
 Standalone church website for Christian Community Fellowship AOH Church of God in Adamsville, Alabama.
 
+Expected GitHub Pages URL after Pages is enabled:
+
+`https://tesvm.github.io/christian-community-fellowship-aoh-church/`
+
 ## Project structure
 
 - `index.html` - main website markup
@@ -43,3 +47,7 @@ git push -u origin main
 ## Content source
 
 Church details were assembled from the back-office church profile provided in the project request.
+
+## Deployment
+
+The repository includes a GitHub Actions workflow at `.github/workflows/deploy-pages.yml` that deploys the site to GitHub Pages on every push to `main`.
