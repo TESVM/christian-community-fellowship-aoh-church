@@ -219,7 +219,8 @@ select {
 .hero-card h2,
 .detail-card h3,
 .promise-grid h3,
-.connect-layout h2 {
+.connect-layout h2,
+.gallery-group h3 {
   margin: 0;
   font-family: var(--font-display);
   letter-spacing: -0.03em;
@@ -237,7 +238,9 @@ select {
 .connect-copy,
 .footer-copy,
 .visit-panel p,
-.card-note {
+.card-note,
+.section-copy,
+.gallery-group-copy p {
   color: var(--muted);
   line-height: 1.75;
 }
@@ -496,6 +499,49 @@ select {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.gallery-groups,
+.facebook-gallery {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.gallery-groups {
+  gap: 2rem;
+}
+
+.gallery-group {
+  padding: 1.5rem;
+  border: 1px solid rgba(196, 151, 61, 0.2);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 251, 245, 0.78);
+  box-shadow: var(--shadow);
+}
+
+.gallery-group-copy {
+  margin-bottom: 1.25rem;
+}
+
+.gallery-group h3 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+.gallery-group-copy p {
+  margin: 0.45rem 0 0;
+}
+
+.facebook-gallery {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.facebook-gallery iframe {
+  width: 100%;
+  max-width: 100%;
+  min-height: 624px;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(51, 28, 17, 0.12);
+}
+
 .detail-card {
   padding: 1.6rem;
 }
@@ -705,6 +751,7 @@ select {
   .visit-layout,
   .connect-layout,
   .cards-grid,
+  .facebook-gallery,
   .promise-grid,
   .info-grid,
   .mission-shell,
@@ -750,6 +797,7 @@ select {
   .hero-card,
   .promise-banner,
   .detail-card,
+  .gallery-group,
   .visit-card,
   .mission-panel,
   .mission-points article,
@@ -763,6 +811,10 @@ select {
   .button,
   .hero-points li {
     width: 100%;
+  }
+
+  .facebook-gallery iframe {
+    min-height: 560px;
   }
 }
 
