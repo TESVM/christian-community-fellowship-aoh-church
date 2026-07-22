@@ -1,0 +1,105 @@
+# Decap CMS configuration for the Christian Community Fellowship website.
+#
+# The site is hosted on GitHub Pages (a static host with no server), so Decap
+# commits edits straight to this repository through the GitHub API. Publishing a
+# change pushes a commit to `main`, which triggers the Pages deploy workflow and
+# updates the live site within a minute or two.
+#
+# ONE-TIME SETUP (see ADMIN.md for full steps):
+#   Decap needs an OAuth handshake to let editors sign in with GitHub. GitHub
+#   Pages cannot run that handshake itself, so point `base_url` at a small,
+#   free OAuth proxy (Netlify or a Cloudflare Worker). Replace the placeholder
+#   below with your deployed proxy URL, then editors just click
+#   "Login with GitHub".
+
+backend:
+  name: github
+  repo: TESVM/christian-community-fellowship-aoh-church
+  branch: main
+  # Replace with your OAuth proxy origin once deployed (no trailing slash):
+  base_url: https://REPLACE-WITH-YOUR-OAUTH-PROXY.example.com
+  auth_endpoint: auth
+
+# Uncomment locally (with `npx decap-server` running) to test the editor
+# without GitHub login:
+# local_backend: true
+
+media_folder: images/uploads
+public_folder: images/uploads
+
+site_url: https://tesvm.github.io/christian-community-fellowship-aoh-church/
+display_url: https://tesvm.github.io/christian-community-fellowship-aoh-church/
+
+collections:
+  - name: site
+    label: Website Content
+    editor:
+      preview: false
+    files:
+      - name: homepage
+        label: Homepage Content
+        file: content/site.json
+        format: json
+        description: Edit the text shown across the church homepage.
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Eyebrow (small line above heading), name: eyebrow, widget: string }
+              - { label: Main heading, name: heading, widget: string }
+              - { label: Tagline, name: tagline, widget: string }
+              - { label: Primary button text, name: primaryCtaText, widget: string }
+              - { label: Primary button link, name: primaryCtaUrl, widget: string }
+              - { label: Secondary button text, name: secondaryCtaText, widget: string }
+
+          - label: Office
+            name: office
+            widget: object
+            fields:
+              - { label: Office hours, name: hours, widget: string }
+
+          - label: About Section
+            name: about
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: First paragraph, name: body1, widget: text }
+              - { label: Second paragraph, name: body2, widget: text }
+
+          - label: Service Schedule
+            name: schedule
+            widget: object
+            fields:
+              - { label: Sunday service time, name: sunday, widget: string }
+              - { label: Wednesday service time, name: wednesday, widget: string }
+              - { label: Schedule note, name: note, widget: text }
+
+          - label: Leadership
+            name: leadership
+            widget: object
+            fields:
+              - { label: Pastor name, name: name, widget: string }
+              - { label: Pastor bio, name: bio, widget: text }
+
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - { label: Address, name: address, widget: string }
+              - { label: Phone (display), name: phone, widget: string }
+              - { label: Phone link (e.g. tel:+12055670364), name: phoneHref, widget: string }
+              - { label: Email (display), name: email, widget: string }
+              - { label: Email link (e.g. mailto:name@example.com), name: emailHref, widget: string }
+              - { label: Facebook label, name: facebookLabel, widget: string }
+              - { label: Facebook URL, name: facebookUrl, widget: string }
+
+          - label: Events & Announcements
+            name: announcements
+            widget: list
+            label_singular: Announcement
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Date / when, name: date, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: body, widget: text }

@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "eyebrow": "Christian Community Fellowship AOH Church of God",
+    "heading": "A place for worship, renewal, and real community",
+    "tagline": "Reviving faith · Restoring hope · Building community in Adamsville",
+    "primaryCtaText": "Stay connected",
+    "primaryCtaUrl": "https://www.facebook.com/ccfaoh",
+    "secondaryCtaText": "Plan your visit"
+  },
+  "office": {
+    "hours": "By appointment · Call or email anytime"
+  },
+  "about": {
+    "heading": "Rooted in faith. Open to every generation.",
+    "body1": "Christian Community Fellowship AOH Church of God is a Christ-centered congregation committed to worship, discipleship, prayer, and service. We believe church should feel both sacred and welcoming, with room for families, visitors, and long-time members to grow together.",
+    "body2": "Whether you are looking for a church home, returning to fellowship, or joining online, you are invited to worship with us and connect with our community."
+  },
+  "schedule": {
+    "sunday": "1:30 PM",
+    "wednesday": "7:30 PM via Zoom",
+    "note": "Midweek connection and teaching are available online. Email the church to request the link."
+  },
+  "leadership": {
+    "name": "Elder Dr. Leonard Bell II",
+    "bio": "Christian Community Fellowship is led with a focus on biblical teaching, strong community, and pastoral care that meets people where they are."
+  },
+  "contact": {
+    "address": "1208 Shady Grove Rd, Adamsville, AL 35005",
+    "phone": "(205) 567-0364",
+    "phoneHref": "tel:+12055670364",
+    "email": "ccfaohmission@gmail.com",
+    "emailHref": "mailto:ccfaohmission@gmail.com",
+    "facebookLabel": "facebook.com/ccfaoh",
+    "facebookUrl": "https://www.facebook.com/ccfaoh"
+  },
+  "announcements": [
+    {
+      "date": "Every Sunday",
+      "title": "Sunday Worship Experience",
+      "body": "Gather with the church family for worship at 1:30 PM."
+    },
+    {
+      "date": "Every Wednesday",
+      "title": "Midweek Bible Study",
+      "body": "Join us online at 7:30 PM on Zoom. Email for the link."
+    }
+  ]
+}
