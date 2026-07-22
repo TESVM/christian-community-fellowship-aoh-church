@@ -10,6 +10,7 @@
  *   data-content="a.b.c"            -> sets element.textContent
  *   data-content-attr="href:a.b.c"  -> sets an attribute (comma-separate multiple)
  *   data-content-list="key"         -> renders an array of {date,title,body} cards
+ *   data-content-bg="a.b.c"         -> sets the --hero-image CSS var (background)
  */
 (function () {
   "use strict";
@@ -74,6 +75,17 @@
     });
   }
 
+  function applyBackgrounds(data) {
+    document.querySelectorAll("[data-content-bg]").forEach(function (el) {
+      var value = getPath(data, el.getAttribute("data-content-bg"));
+      if (typeof value !== "string" || value.trim() === "") return;
+      // Decap may store an absolute "/images/..." path; strip the leading slash
+      // so it stays relative to the site (this project is served from a subpath).
+      var path = value.replace(/^\//, "");
+      el.style.setProperty("--hero-image", 'url("' + path + '")');
+    });
+  }
+
   fetch("content/site.json", { cache: "no-cache" })
     .then(function (res) {
       if (!res.ok) throw new Error("content unavailable");
@@ -84,6 +96,7 @@
       applyText(data);
       applyAttrs(data);
       applyLists(data);
+      applyBackgrounds(data);
     })
     .catch(function () {
       /* No content file yet — the static HTML content stands as-is. */

@@ -16,9 +16,11 @@ backend:
   name: github
   repo: TESVM/christian-community-fellowship-aoh-church
   branch: main
-  # Replace with your OAuth proxy origin once deployed (no trailing slash):
-  base_url: https://REPLACE-WITH-YOUR-OAUTH-PROXY.example.com
-  auth_endpoint: auth
+  # Uses Netlify's free OAuth provider to handle the GitHub sign-in handshake.
+  # After you register a GitHub OAuth App and connect it in Netlify (see
+  # ADMIN.md, Option A) this line needs no change. If you instead run your own
+  # OAuth proxy (Option B), replace this with your proxy origin.
+  base_url: https://api.netlify.com
 
 # Uncomment locally (with `npx decap-server` running) to test the editor
 # without GitHub login:
@@ -46,6 +48,7 @@ collections:
             name: hero
             widget: object
             fields:
+              - { label: Background image, name: image, widget: image, required: false, hint: "Wide photo works best. Leave blank to keep the current image." }
               - { label: Eyebrow (small line above heading), name: eyebrow, widget: string }
               - { label: Main heading, name: heading, widget: string }
               - { label: Tagline, name: tagline, widget: string }

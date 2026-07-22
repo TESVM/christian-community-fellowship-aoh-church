@@ -332,9 +332,10 @@ h3 {
   align-items: center;
   padding: 5rem 0;
   color: #fff;
+  --hero-image: url("../images/pastor/pastor-bell.jpg");
   background-image:
-    linear-gradient(180deg, rgba(36, 10, 10, 0.55), rgba(36, 10, 10, 0.72)),
-    url("../images/pastor/pastor-bell.jpg");
+    linear-gradient(180deg, rgba(36, 10, 10, 0.5), rgba(36, 10, 10, 0.68)),
+    var(--hero-image);
   background-size: cover;
   background-position: center 28%;
 }
@@ -387,8 +388,8 @@ h3 {
 .info-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  padding: 2.2rem 0;
+  gap: 1.75rem;
+  padding: 2.6rem 0;
 }
 
 .info-grid article {
@@ -434,7 +435,7 @@ h3 {
 
 .section-heading {
   max-width: 46rem;
-  margin: 0 auto 2.6rem;
+  margin: 0 auto 3rem;
   text-align: center;
 }
 
