@@ -1,15 +1,22 @@
 # Decap CMS configuration for the Christian Community Fellowship website.
 #
-# Auth uses Netlify Identity + Git Gateway, so church staff sign in with an
-# email and password (no GitHub account needed). Publishing a change commits to
-# this repository through Git Gateway, and Netlify redeploys the site.
+# Auth uses DecapBridge, so church staff sign in with an email and password
+# (no GitHub account needed). Publishing a change commits to this repository,
+# and Netlify redeploys the site.
 #
-# Setup (see ADMIN.md): deploy the site to Netlify, enable Identity, enable
-# Git Gateway, then invite staff by email.
+# Setup (see ADMIN.md): create a DecapBridge account, add this repo, and paste
+# the backend block DecapBridge generates for you in place of the two REPLACE
+# lines below (these URLs are not secret).
 
 backend:
   name: git-gateway
+  gateway_url: https://gateway.decapbridge.com
+  identity_url: https://auth.decapbridge.com/REPLACE-WITH-YOUR-DECAPBRIDGE-SITE-ID
   branch: main
+
+# DecapBridge login screen customisation (optional):
+site_url: https://ccfaohc.netlify.app
+logo_url: https://ccfaohc.netlify.app/images/branding/logo-ccf.png
 
 media_folder: images/uploads
 public_folder: /images/uploads
