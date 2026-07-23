@@ -1,22 +1,39 @@
 # Decap CMS configuration for the Christian Community Fellowship website.
 #
-# Auth uses DecapBridge, so church staff sign in with an email and password
-# (no GitHub account needed). Publishing a change commits to this repository,
-# and Netlify redeploys the site.
-#
-# Setup (see ADMIN.md): create a DecapBridge account, add this repo, and paste
-# the backend block DecapBridge generates for you in place of the two REPLACE
-# lines below (these URLs are not secret).
+# Auth uses DecapBridge (PKCE), so church staff sign in with an email and
+# password (no GitHub account needed). Publishing a change commits to this
+# repository and Netlify redeploys the site. See ADMIN.md.
 
+# Use DecapBridge PKCE auth (required)
 backend:
   name: git-gateway
-  gateway_url: https://gateway.decapbridge.com
-  identity_url: https://auth.decapbridge.com/REPLACE-WITH-YOUR-DECAPBRIDGE-SITE-ID
+  repo: TESVM/christian-community-fellowship-aoh-church
   branch: main
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/c6197806-a877-4d29-8f0a-bb75d7bdafde/pkce
+  auth_token_endpoint: /sites/c6197806-a877-4d29-8f0a-bb75d7bdafde/token
+  gateway_url: https://gateway.decapbridge.com
 
-# DecapBridge login screen customisation (optional):
-site_url: https://ccfaohc.netlify.app
+  # See who did what (optional)
+  commit_messages:
+    create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    delete: Delete {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    uploadMedia: Upload “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    deleteMedia: Delete “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
+
+# Enable PKCE fields (optional, recommended)
+auth:
+  email_claim: email
+  first_name_claim: first_name
+  last_name_claim: last_name
+  avatar_url_claim: avatar_url
+
+# Login-screen branding + site links
 logo_url: https://ccfaohc.netlify.app/images/branding/logo-ccf.png
+site_url: https://ccfaohc.netlify.app
 
 media_folder: images/uploads
 public_folder: /images/uploads
