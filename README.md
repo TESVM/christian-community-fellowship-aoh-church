@@ -10,7 +10,18 @@ Expected GitHub Pages URL after Pages is enabled:
 
 - `index.html` - main website markup
 - `styles/main.css` - responsive site styling
-- `scripts/main.js` - small interaction enhancements
+- `scripts/main.js` - navigation and interaction enhancements
+- `scripts/content.js` - loads editable content from `content/site.json` (progressive enhancement)
+- `content/site.json` - editable site content (managed via the admin console)
+- `admin/` - Decap CMS content editor (`/admin/`); see [ADMIN.md](ADMIN.md)
+- `404.html` - branded not-found page
+- `images/` - logo, favicon, and pastor photo
+
+## Editing content
+
+Content can be edited through the web admin console at `/admin/`. See
+[ADMIN.md](ADMIN.md) for the day-to-day workflow and the one-time OAuth setup
+required before login works.
 
 ## Local preview
 

@@ -8,11 +8,11 @@
       name="description"
       content="Official website for Christian Community Fellowship AOH Church of God in Adamsville, Alabama. Join us for worship, prayer, community, and online fellowship."
     />
-    <meta
-      name="keywords"
-      content="Christian Community Fellowship, AOH Church of God, Adamsville Alabama church, Elder Dr. Leonard Bell II, Apostolic church"
+    <meta name="theme-color" content="#4a1a1a" />
+    <link
+      rel="canonical"
+      href="https://tesvm.github.io/christian-community-fellowship-aoh-church/"
     />
-    <meta name="theme-color" content="#201512" />
     <meta property="og:title" content="Christian Community Fellowship AOH Church of God" />
     <meta
       property="og:description"
@@ -20,11 +20,32 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content="images/branding/logo-ccf.png" />
+    <meta
+      property="og:url"
+      content="https://tesvm.github.io/christian-community-fellowship-aoh-church/"
+    />
+    <meta property="og:site_name" content="Christian Community Fellowship AOH Church of God" />
+    <meta
+      property="og:image"
+      content="https://tesvm.github.io/christian-community-fellowship-aoh-church/images/branding/logo-ccf.png"
+    />
+    <meta property="og:image:alt" content="Christian Community Fellowship AOH Church of God logo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Christian Community Fellowship AOH Church of God" />
+    <meta
+      name="twitter:description"
+      content="Join Christian Community Fellowship AOH Church of God in Adamsville, Alabama for worship, prayer, fellowship, and online connection."
+    />
+    <meta
+      name="twitter:image"
+      content="https://tesvm.github.io/christian-community-fellowship-aoh-church/images/branding/logo-ccf.png"
+    />
+    <link rel="icon" href="images/branding/favicon-64.png" type="image/png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="images/branding/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/main.css" />
@@ -34,176 +55,204 @@
 
     <header class="site-header">
       <div class="container nav-shell">
-        <div class="brand-lockup">
-            <img
-              class="brand-logo"
-              src="images/branding/logo-ccf.png"
-              alt="Christian Community Fellowship logo"
-              width="64"
-              height="64"
-          />
-          <div>
-            <p class="eyebrow">District 4</p>
-            <p class="brand-name">Christian Community Fellowship</p>
-          </div>
-        </div>
-
-        <nav class="site-nav" aria-label="Primary">
-          <a href="#fellowship">Fellowship</a>
-          <a href="#worship">Worship</a>
-          <a href="#about">About</a>
-          <a href="#leadership">Leadership</a>
-          <a href="#next-steps">Next steps</a>
-          <a href="#visit">Visit</a>
-          <a href="#connect">Connect</a>
-        </nav>
-
         <button
           class="menu-toggle"
           type="button"
           aria-expanded="false"
-          aria-controls="mobile-menu"
-          aria-label="Open menu"
+          aria-controls="menu-panel"
         >
           Menu
         </button>
-      </div>
 
-      <div id="mobile-menu" class="mobile-menu container" hidden>
-        <nav class="mobile-nav" aria-label="Mobile">
-          <a href="#fellowship">Fellowship</a>
-          <a href="#worship">Worship</a>
-          <a href="#about">About</a>
-          <a href="#leadership">Leadership</a>
-          <a href="#next-steps">Next steps</a>
-          <a href="#visit">Visit</a>
-          <a href="#connect">Connect</a>
-        </nav>
+        <div class="brand-lockup">
+          <img
+            class="brand-logo"
+            src="images/branding/logo-ccf.png"
+            alt="Christian Community Fellowship logo"
+            width="48"
+            height="48"
+          />
+          <div>
+            <p class="brand-eyebrow">District 4</p>
+            <p class="brand-name">Christian Community Fellowship</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <a class="icon-button" href="#connect" aria-label="Jump to contact information">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </a>
+        </div>
       </div>
     </header>
 
+    <div class="menu-backdrop" hidden></div>
+    <aside id="menu-panel" class="menu-panel" aria-label="Site menu" aria-hidden="true">
+      <div class="menu-panel-head">
+        <p>Menu</p>
+        <button class="menu-close" type="button" aria-label="Close menu">&times;</button>
+      </div>
+      <nav class="menu-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#worship">Worship</a>
+        <a href="#fellowship">Fellowship</a>
+        <a href="#events">Events</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#next-steps">Next steps</a>
+        <a href="#visit">Visit</a>
+        <a href="#connect">Connect</a>
+      </nav>
+    </aside>
+
     <main id="main-content">
-      <section class="hero-section">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Christian Community Fellowship AOH Church of God</p>
-            <h1>A place for worship, renewal, and real community in Adamsville.</h1>
-            <p class="hero-text">
-              Join us for heartfelt worship, biblical teaching, and a welcoming church family led by
-              <strong>Elder Dr. Leonard Bell II</strong>.
-            </p>
-
-            <div class="hero-actions">
-              <a class="button button-primary" href="https://www.facebook.com/ccfaoh" target="_blank" rel="noreferrer">
-                Join online
-              </a>
-              <a class="button button-secondary" href="#visit">Plan your visit</a>
-            </div>
-
-            <ul class="hero-points" aria-label="Church highlights">
-              <li>Sunday worship at 1:30 PM</li>
-              <li>Wednesday night at 7:30 PM via Zoom</li>
-              <li>Serving Adamsville, Alabama and beyond</li>
-            </ul>
+      <section class="hero-section" aria-label="Welcome" data-content-bg="hero.image">
+        <div class="container hero-inner">
+          <p class="hero-eyebrow" data-content="hero.eyebrow">Christian Community Fellowship AOH Church of God</p>
+          <h1 data-content="hero.heading">A place for worship, renewal, and real community</h1>
+          <p class="hero-tagline" data-content="hero.tagline">
+            Reviving faith · Restoring hope · Building community in Adamsville
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button button-primary"
+              data-content="hero.primaryCtaText"
+              data-content-attr="href:hero.primaryCtaUrl"
+              href="https://www.facebook.com/ccfaoh"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Stay connected
+            </a>
+            <a class="button button-outline-light" href="#visit" data-content="hero.secondaryCtaText">
+              Plan your visit
+            </a>
           </div>
-
-          <aside class="hero-card" aria-label="Worship schedule">
-            <div class="card-glow" aria-hidden="true"></div>
-            <p class="eyebrow">This week</p>
-            <h2>Worship with us</h2>
-
-            <div class="schedule-item">
-              <span class="schedule-day">Sunday</span>
-              <span class="schedule-time">1:30 PM</span>
-            </div>
-            <div class="schedule-item">
-              <span class="schedule-day">Wednesday</span>
-              <span class="schedule-time">7:30 PM on Zoom</span>
-            </div>
-
-            <p class="card-note">Email the church for the Wednesday night Zoom link.</p>
-
-            <div class="contact-stack">
-              <a href="tel:+12055670364">(205) 567-0364</a>
-              <a href="mailto:ccfaohmission@gmail.com">ccfaohmission@gmail.com</a>
-            </div>
-          </aside>
         </div>
       </section>
 
       <section class="info-band" aria-label="Quick information">
         <div class="container info-grid">
           <article>
-            <p class="info-label">Pastor</p>
-            <p class="info-value">Elder Dr. Leonard Bell II</p>
+            <p class="info-label">Office hours</p>
+            <p class="info-value" data-content="office.hours">By appointment · Call or email anytime</p>
           </article>
           <article>
-            <p class="info-label">Address</p>
-            <p class="info-value">1208 Shady Grove Rd, Adamsville, AL 35005</p>
+            <p class="info-label">Location</p>
+            <p class="info-value" data-content="contact.address">1208 Shady Grove Rd, Adamsville, AL 35005</p>
           </article>
           <article>
             <p class="info-label">Online</p>
-            <p class="info-value">facebook.com/ccfaoh</p>
+            <p class="info-value">
+              <a
+                href="https://www.facebook.com/ccfaoh"
+                target="_blank"
+                rel="noreferrer"
+                data-content="contact.facebookLabel"
+                data-content-attr="href:contact.facebookUrl"
+              >facebook.com/ccfaoh</a>
+            </p>
           </article>
         </div>
       </section>
 
       <section id="about" class="section">
-        <div class="container section-grid">
-          <div>
-            <p class="eyebrow">About the church</p>
-            <h2>Rooted in faith. Open to every generation.</h2>
+        <div class="container about-grid">
+          <div class="about-media">
+            <img
+              src="images/pastor/pastor-bell.jpg"
+              alt="Elder Dr. Leonard Bell II"
+              width="958"
+              height="960"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
-          <div class="body-copy">
-            <p>
-              Christian Community Fellowship AOH Church of God is a Christ-centered congregation committed
-              to worship, discipleship, prayer, and service. We believe church should feel both sacred and
-              welcoming, with room for families, visitors, and long-time members to grow together.
+          <div class="about-copy">
+            <p class="eyebrow">About us</p>
+            <h2 data-content="about.heading">Rooted in faith. Open to every generation.</h2>
+            <p data-content="about.body1">
+              Christian Community Fellowship AOH Church of God is a Christ-centered congregation
+              committed to worship, discipleship, prayer, and service. We believe church should feel
+              both sacred and welcoming, with room for families, visitors, and long-time members to
+              grow together.
             </p>
-            <p>
-              Whether you are looking for a church home, returning to fellowship, or joining online, you are
-              invited to worship with us and connect with our community.
+            <p data-content="about.body2">
+              Whether you are looking for a church home, returning to fellowship, or joining online,
+              you are invited to worship with us and connect with our community.
             </p>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container mission-shell">
-          <div class="mission-panel">
-            <p class="eyebrow">Our mission</p>
-            <h2>Building lives through worship, truth, and fellowship.</h2>
-            <p>
-              We are committed to creating a church home where people can encounter God, be strengthened by
-              biblical teaching, and grow in community with one another.
-            </p>
+      <section id="worship" class="section section-sand">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Join us in person or online</p>
+            <h2>Worship with us</h2>
+            <div class="divider" aria-hidden="true"></div>
           </div>
 
-          <div class="mission-points">
-            <article>
-              <h3>Worship with purpose</h3>
-              <p>Every gathering is shaped around prayer, praise, and the preaching of the Word.</p>
+          <div class="cards-grid">
+            <article class="detail-card">
+              <p class="detail-label">Sunday Worship</p>
+              <h3 data-content="schedule.sunday">1:30 PM</h3>
+              <p>Come together for praise, preaching, and fellowship each Sunday afternoon.</p>
             </article>
-            <article>
-              <h3>Care for people</h3>
-              <p>We want every visitor, member, and family to feel seen, welcomed, and supported.</p>
+
+            <article class="detail-card">
+              <p class="detail-label">Wednesday Night</p>
+              <h3 data-content="schedule.wednesday">7:30 PM via Zoom</h3>
+              <p data-content="schedule.note">
+                Midweek connection and teaching are available online. Email the church to request the link.
+              </p>
             </article>
-            <article>
-              <h3>Grow in faith</h3>
-              <p>Our goal is not attendance alone, but spiritual maturity and daily discipleship.</p>
+
+            <article class="detail-card">
+              <p class="detail-label">Watch and connect</p>
+              <h3>Online fellowship</h3>
+              <p>Follow the church on Facebook for updates, encouragement, and digital connection points.</p>
+              <a class="text-link" href="https://www.facebook.com/ccfaoh" target="_blank" rel="noreferrer">
+                Visit the Facebook page
+              </a>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="fellowship" class="section section-accent">
+      <section id="events" class="section section-maroon">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">What's happening</p>
+            <h2>Events &amp; announcements</h2>
+            <div class="divider" aria-hidden="true"></div>
+          </div>
+          <div class="events-grid" data-content-list="announcements">
+            <article class="event-card">
+              <p class="event-date">Every Sunday</p>
+              <h3>Sunday Worship Experience</h3>
+              <p>Gather with the church family for worship at 1:30 PM.</p>
+            </article>
+            <article class="event-card">
+              <p class="event-date">Every Wednesday</p>
+              <h3>Midweek Bible Study</h3>
+              <p>Join us online at 7:30 PM on Zoom. Email for the link.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="fellowship" class="section">
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">Fellowship and love</p>
-            <h2>Moments from ministry, service, and community life.</h2>
+            <h2>Moments from ministry and community life</h2>
+            <div class="divider" aria-hidden="true"></div>
             <p class="section-copy">
-              These photo highlights come directly from the church's Facebook page and show the spirit of
-              fellowship, outreach, and youth engagement at Christian Community Fellowship.
+              These photo highlights come directly from the church's Facebook page and show the
+              spirit of fellowship, outreach, and youth engagement at Christian Community Fellowship.
             </p>
           </div>
 
@@ -269,7 +318,7 @@
                   loading="lazy"
                 ></iframe>
                 <iframe
-                  title="Christian Community Fellowship youth photo 3"
+                  title="Christian Community Fellowship youth photo 2"
                   src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%2F%3Ffbid%3D744503208330695%26set%3Dpb.100083130684530.-2207520000&show_text=false&width=500"
                   width="500"
                   height="624"
@@ -281,7 +330,7 @@
                   loading="lazy"
                 ></iframe>
                 <iframe
-                  title="Christian Community Fellowship youth photo 8"
+                  title="Christian Community Fellowship youth photo 3"
                   src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%2F%3Ffbid%3D509621421818876%26set%3Dpb.100083130684530.-2207520000&show_text=false&width=500"
                   width="500"
                   height="624"
@@ -298,70 +347,39 @@
         </div>
       </section>
 
-      <section id="worship" class="section section-accent">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Worship schedule</p>
-            <h2>Gather in person and online.</h2>
-          </div>
-
-          <div class="cards-grid">
-            <article class="detail-card">
-              <p class="detail-label">Sunday Worship</p>
-              <h3>1:30 PM</h3>
-              <p>Come together for praise, preaching, and fellowship each Sunday afternoon.</p>
-            </article>
-
-            <article class="detail-card">
-              <p class="detail-label">Wednesday Night</p>
-              <h3>7:30 PM via Zoom</h3>
-              <p>Midweek connection and teaching are available online. Email the church to request the link.</p>
-            </article>
-
-            <article class="detail-card">
-              <p class="detail-label">Watch and connect</p>
-              <h3>Online fellowship</h3>
-              <p>Follow the church on Facebook for updates, encouragement, and digital connection points.</p>
-              <a class="text-link" href="https://www.facebook.com/ccfaoh" target="_blank" rel="noreferrer">
-                Visit the Facebook page
-              </a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="leadership" class="section">
+      <section id="leadership" class="section section-sand">
         <div class="container leadership-layout">
-          <article class="leadership-card">
+          <div class="leadership-card">
             <p class="eyebrow">Pastoral leadership</p>
-            <h2>Elder Dr. Leonard Bell II</h2>
-            <p>
-              Christian Community Fellowship is led with a focus on biblical teaching, strong community, and
-              pastoral care that meets people where they are.
+            <h2 data-content="leadership.name">Elder Dr. Leonard Bell II</h2>
+            <p data-content="leadership.bio">
+              Christian Community Fellowship is led with a focus on biblical teaching, strong
+              community, and pastoral care that meets people where they are.
             </p>
             <a class="text-link" href="mailto:ccfaohmission@gmail.com">Contact the pastor's office</a>
-          </article>
-
-          <aside class="quote-card">
+          </div>
+          <div>
             <img
               class="pastor-photo"
               src="images/pastor/pastor-bell.jpg"
               alt="Pastoral portrait of Elder Dr. Leonard Bell II"
               width="958"
-              height="958"
+              height="960"
+              loading="lazy"
+              decoding="async"
             />
-            <p class="quote-attribution">Elder Dr. Leonard Bell II</p>
-          </aside>
+            <p class="quote-attribution" data-content="leadership.name">Elder Dr. Leonard Bell II</p>
+          </div>
         </div>
       </section>
 
-      <section id="next-steps" class="section section-accent">
+      <section id="next-steps" class="section">
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">Next steps</p>
-            <h2>Three simple ways to connect with the church this week.</h2>
+            <h2>Three simple ways to connect this week</h2>
+            <div class="divider" aria-hidden="true"></div>
           </div>
-
           <div class="next-steps-grid">
             <article class="step-card">
               <span class="step-number">01</span>
@@ -382,14 +400,14 @@
         </div>
       </section>
 
-      <section id="visit" class="section">
+      <section id="visit" class="section section-sand">
         <div class="container visit-layout">
           <div class="visit-panel">
             <p class="eyebrow">Plan your visit</p>
-            <h2>Find us in Adamsville.</h2>
+            <h2>Find us in Adamsville</h2>
             <p>
-              We would be glad to welcome you in person. If you are visiting for the first time, reach out
-              before service and we will help you get connected.
+              We would be glad to welcome you in person. If you are visiting for the first time,
+              reach out before service and we will help you get connected.
             </p>
             <div class="visit-actions">
               <a
@@ -400,22 +418,26 @@
               >
                 Get directions
               </a>
-              <a class="button button-secondary" href="mailto:ccfaohmission@gmail.com">Email the church</a>
+              <a class="button button-outline" href="mailto:ccfaohmission@gmail.com">Email the church</a>
             </div>
           </div>
 
           <div class="visit-card">
             <div class="visit-line">
               <span>Location</span>
-              <strong>1208 Shady Grove Rd<br />Adamsville, AL 35005</strong>
+              <strong data-content="contact.address">1208 Shady Grove Rd, Adamsville, AL 35005</strong>
             </div>
             <div class="visit-line">
               <span>Phone</span>
-              <strong><a href="tel:+12055670364">(205) 567-0364</a></strong>
+              <strong>
+                <a href="tel:+12055670364" data-content="contact.phone" data-content-attr="href:contact.phoneHref">(205) 567-0364</a>
+              </strong>
             </div>
             <div class="visit-line">
               <span>Email</span>
-              <strong><a href="mailto:ccfaohmission@gmail.com">ccfaohmission@gmail.com</a></strong>
+              <strong>
+                <a href="mailto:ccfaohmission@gmail.com" data-content="contact.email" data-content-attr="href:contact.emailHref">ccfaohmission@gmail.com</a>
+              </strong>
             </div>
             <div class="visit-line">
               <span>District</span>
@@ -426,12 +448,12 @@
       </section>
 
       <section class="section">
-        <div class="container faq-shell">
+        <div class="container">
           <div class="section-heading">
             <p class="eyebrow">Visitor FAQ</p>
-            <h2>Helpful details before you arrive.</h2>
+            <h2>Helpful details before you arrive</h2>
+            <div class="divider" aria-hidden="true"></div>
           </div>
-
           <div class="faq-grid">
             <details class="faq-item">
               <summary>Where is the church located?</summary>
@@ -453,57 +475,76 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="container promise-banner">
-          <p class="eyebrow">What to expect</p>
-          <div class="promise-grid">
-            <article>
-              <h3>Authentic worship</h3>
-              <p>A church atmosphere centered on prayer, praise, and the Word.</p>
-            </article>
-            <article>
-              <h3>Family connection</h3>
-              <p>A welcoming place for individuals, couples, children, and extended families.</p>
-            </article>
-            <article>
-              <h3>Spiritual growth</h3>
-              <p>Ongoing encouragement through fellowship, study, and weekly gathering.</p>
-            </article>
+      <section class="section section-maroon newsletter">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Stay in the loop</p>
+            <h2>Newsletter</h2>
+            <div class="divider" aria-hidden="true"></div>
           </div>
+          <form class="newsletter-form" action="https://www.facebook.com/ccfaoh" method="get" target="_blank" rel="noreferrer">
+            <label class="skip-link" for="newsletter-email">Email address</label>
+            <input id="newsletter-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required />
+            <button class="button button-light" type="submit">Subscribe</button>
+          </form>
+          <p class="newsletter-note">
+            Prefer social? Follow the church on
+            <a href="https://www.facebook.com/ccfaoh" target="_blank" rel="noreferrer" style="color:#fff;text-decoration:underline">Facebook</a>
+            for announcements and encouragement.
+          </p>
         </div>
       </section>
 
-      <section id="connect" class="section section-dark">
-        <div class="container connect-layout">
-          <div>
-            <p class="eyebrow">Connect</p>
-            <h2>Reach out and stay in touch.</h2>
-            <p class="connect-copy">
-              For service questions, Zoom access, or ministry information, use any of the contact options below.
-            </p>
-          </div>
-
+      <section id="connect" class="section">
+        <div class="container section-heading">
+          <p class="eyebrow">Connect</p>
+          <h2>Reach out and stay in touch</h2>
+          <div class="divider" aria-hidden="true"></div>
+          <p class="section-copy">
+            For service questions, Zoom access, or ministry information, use any of the contact options below.
+          </p>
           <div class="connect-actions">
-            <a class="button button-light" href="tel:+12055670364">Call the church</a>
-            <a class="button button-light" href="mailto:ccfaohmission@gmail.com">Send an email</a>
-            <a class="button button-outline-light" href="https://www.facebook.com/ccfaoh" target="_blank" rel="noreferrer">
-              Open Facebook
-            </a>
+            <a class="button button-primary" href="tel:+12055670364" data-content-attr="href:contact.phoneHref">Call the church</a>
+            <a class="button button-outline" href="mailto:ccfaohmission@gmail.com" data-content-attr="href:contact.emailHref">Send an email</a>
+            <a class="button button-outline" href="https://www.facebook.com/ccfaoh" target="_blank" rel="noreferrer">Open Facebook</a>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-shell">
-        <div>
-          <p class="brand-name">Christian Community Fellowship AOH Church of God</p>
-          <p class="footer-copy">Serving Adamsville, Alabama with worship, fellowship, and faith.</p>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <p class="footer-brand-name">Christian Community Fellowship AOH Church of God</p>
+            <p>Serving Adamsville, Alabama with worship, fellowship, and faith. District 4.</p>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul class="footer-list">
+              <li data-content="contact.address">1208 Shady Grove Rd, Adamsville, AL 35005</li>
+              <li><a href="tel:+12055670364" data-content="contact.phone" data-content-attr="href:contact.phoneHref">(205) 567-0364</a></li>
+              <li><a href="mailto:ccfaohmission@gmail.com" data-content="contact.email" data-content-attr="href:contact.emailHref">ccfaohmission@gmail.com</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <ul class="footer-list">
+              <li><a href="#about">About</a></li>
+              <li><a href="#worship">Worship</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="#visit">Visit</a></li>
+              <li><a href="https://www.facebook.com/ccfaoh" target="_blank" rel="noreferrer">Facebook</a></li>
+            </ul>
+          </div>
         </div>
-        <p class="footer-copy">Direct church-provided update. <span id="current-year"></span></p>
+        <p class="footer-bottom">
+          &copy; <span id="current-year"></span> Christian Community Fellowship AOH Church of God. All rights reserved.
+        </p>
       </div>
     </footer>
 
+    <script src="scripts/content.js"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>
