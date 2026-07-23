@@ -1,36 +1,18 @@
 # Decap CMS configuration for the Christian Community Fellowship website.
 #
-# The site is hosted on GitHub Pages (a static host with no server), so Decap
-# commits edits straight to this repository through the GitHub API. Publishing a
-# change pushes a commit to `main`, which triggers the Pages deploy workflow and
-# updates the live site within a minute or two.
+# Auth uses Netlify Identity + Git Gateway, so church staff sign in with an
+# email and password (no GitHub account needed). Publishing a change commits to
+# this repository through Git Gateway, and Netlify redeploys the site.
 #
-# ONE-TIME SETUP (see ADMIN.md for full steps):
-#   Decap needs an OAuth handshake to let editors sign in with GitHub. GitHub
-#   Pages cannot run that handshake itself, so point `base_url` at a small,
-#   free OAuth proxy (Netlify or a Cloudflare Worker). Replace the placeholder
-#   below with your deployed proxy URL, then editors just click
-#   "Login with GitHub".
+# Setup (see ADMIN.md): deploy the site to Netlify, enable Identity, enable
+# Git Gateway, then invite staff by email.
 
 backend:
-  name: github
-  repo: TESVM/christian-community-fellowship-aoh-church
+  name: git-gateway
   branch: main
-  # Uses Netlify's free OAuth provider to handle the GitHub sign-in handshake.
-  # After you register a GitHub OAuth App and connect it in Netlify (see
-  # ADMIN.md, Option A) this line needs no change. If you instead run your own
-  # OAuth proxy (Option B), replace this with your proxy origin.
-  base_url: https://api.netlify.com
-
-# Uncomment locally (with `npx decap-server` running) to test the editor
-# without GitHub login:
-# local_backend: true
 
 media_folder: images/uploads
-public_folder: images/uploads
-
-site_url: https://tesvm.github.io/christian-community-fellowship-aoh-church/
-display_url: https://tesvm.github.io/christian-community-fellowship-aoh-church/
+public_folder: /images/uploads
 
 collections:
   - name: site

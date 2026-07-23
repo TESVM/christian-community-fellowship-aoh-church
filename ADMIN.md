@@ -1,99 +1,56 @@
 # Content Admin Guide
 
-The website content (hero text, service times, about, leadership, contact
-details, and events/announcements) can be edited through a web-based admin
-console at **`/admin/`** — for example:
-
-`https://tesvm.github.io/christian-community-fellowship-aoh-church/admin/`
-
-It uses [Decap CMS](https://decapcms.org). When you publish a change, Decap
-commits the update to this GitHub repository, which automatically re-deploys the
-site through the existing GitHub Pages workflow. Changes appear on the live site
-within a minute or two.
-
-There is no separate server or database — everything stays in this repo.
-
----
-
-## How editing works (day to day)
-
-1. Go to `/admin/` on the site and click **Login with GitHub**.
-2. Open **Website Content → Homepage Content**.
-3. Edit any field (for example, change the Sunday service time or add an event).
-4. Click **Publish**. That's it — the live site updates shortly after.
+Church staff edit the website at **`/admin/`** using a simple **email and
+password** — no GitHub account required. It uses [Decap CMS](https://decapcms.org)
+with **Netlify Identity + Git Gateway**: when staff publish a change, it commits
+to this repository and Netlify redeploys the site automatically (live in a
+minute or two).
 
 Editable content lives in [`content/site.json`](content/site.json). The page
-also keeps a copy of the current text in the HTML itself, so if the JSON is ever
-missing the site still shows real content (it never goes blank).
+also keeps a copy of the text in the HTML, so the site never shows blank content
+if the JSON is missing.
 
 ---
 
-## One-time setup (required before login works)
+## Day-to-day editing
 
-GitHub Pages is a static host and cannot perform the GitHub sign-in handshake by
-itself, so Decap needs a tiny, free **OAuth helper** deployed once. Pick ONE of
-the options below, then update [`admin/config.yml`](admin/config.yml).
-
-### Option A — Netlify OAuth helper (simplest, free)
-
-1. Register a **GitHub OAuth App**: GitHub → Settings → Developer settings →
-   OAuth Apps → **New OAuth App**.
-   - Homepage URL: your site URL.
-   - Authorization callback URL: `https://api.netlify.com/auth/done`
-   - Save the **Client ID** and **Client Secret**.
-2. Create a free Netlify account and a new site (it can be an empty placeholder).
-   Under **Site settings → Access control → OAuth → Install provider**, add
-   **GitHub** with the Client ID and Secret from step 1.
-3. In `admin/config.yml`, set:
-   ```yaml
-   backend:
-     name: github
-     repo: TESVM/christian-community-fellowship-aoh-church
-     branch: main
-     base_url: https://api.netlify.com
-   ```
-   (Remove the `auth_endpoint` line, since Netlify uses its default.)
-
-### Option B — Cloudflare Worker OAuth proxy (no Netlify account)
-
-1. Register a **GitHub OAuth App** as in Option A, but set the callback URL to
-   your Worker's `/callback` URL.
-2. Deploy a known Decap OAuth Worker (for example
-   [`decap-cms-oauth`-style workers](https://decapcms.org/docs/external-oauth-clients/))
-   with your GitHub Client ID and Secret as environment variables.
-3. In `admin/config.yml`, set `base_url` to your Worker's origin and keep
-   `auth_endpoint: auth`.
-
-### Who can edit
-
-Only GitHub accounts with **write access** to this repository can publish. Add
-editors as repository collaborators in GitHub → Settings → Collaborators. Keep
-that list small — anyone on it can change the live site.
+1. Go to `https://YOUR-SITE.netlify.app/admin/`.
+2. Log in with your email and password.
+3. Open **Website Content → Homepage Content**, edit any field, click **Publish**.
 
 ---
 
-## Test the editor locally (optional, no GitHub needed)
+## One-time setup (deploy + turn on logins)
 
-```bash
-# Terminal 1 — Decap's local git proxy
-npx decap-server
+### 1. Deploy the site to Netlify
+- In Netlify: **Add new project → Import an existing project → GitHub**, authorize,
+  and choose `christian-community-fellowship-aoh-church`.
+- Build command: leave **empty**. Publish directory: leave **empty** (or `.`).
+- Click **Deploy**. You'll get a `something.netlify.app` URL.
 
-# Terminal 2 — serve the site
-python3 -m http.server 4173
-```
+### 2. Turn on email/password logins (Netlify Identity)
+- Open the site in Netlify → **Identity** (or **Site configuration → Identity**)
+  → **Enable Identity**.
+- Under **Registration**, choose **Invite only** (recommended, so only invited
+  staff can sign in).
 
-Then uncomment `local_backend: true` in `admin/config.yml`, open
-`http://localhost:4173/admin/`, and edits will be written straight to your local
-`content/site.json`. Re-comment `local_backend` before deploying.
+### 3. Let the editor save changes (Git Gateway)
+- Still under Identity → **Services → Git Gateway → Enable Git Gateway**.
+
+### 4. Invite the church staff
+- Identity → **Invite users** → enter each person's email.
+- They get an email, click the link, set a password, and can then edit at
+  `/admin/`.
+
+That's it. The GitHub OAuth App created earlier is **not** used by this flow and
+can be deleted.
 
 ---
 
-## Security notes
+## Notes
 
-- No passwords, tokens, or secrets are stored in this repository. The GitHub
-  OAuth Client Secret lives only in Netlify/Cloudflare, never in the site code.
-- The `/admin/` page is marked `noindex` so search engines don't list it, but it
-  is not itself a secret — access is controlled by GitHub login + repo
-  permissions, which is what actually protects publishing.
-- Editors sign in with their own GitHub accounts; revoke access by removing them
-  as repository collaborators.
+- Uploading a new hero photo: use the **Background image** field in the admin
+  (it uploads into `images/uploads/`).
+- If Netlify ever retires Identity on your plan, the alternative is Decap with a
+  GitHub OAuth proxy (staff would then log in with GitHub). Ask before switching.
+- Only invited emails can log in; remove someone by deleting them under Identity.
